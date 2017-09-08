@@ -9,16 +9,24 @@ class HomePageSpec extends GebSpec{
 		
 		given:
 		println("Test initialized!")
+		def searchString = "deneme"
 		
-		when:""		
+		when:		
 		to HomePage
-		"enter search key"("deneme")
+		at HomePage
 		
 		and:
-		"click search"()
+		searchField.value(searchString)
 		
 		then:
-		assert searchField.value() == "deneme"
+		searchField.value() == searchString
+		
+		when:
+		logo.click()
+		searchButton.click()
+		
+		then:
+		searchField.value() == "deneme"
 	}
 
 }

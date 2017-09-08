@@ -17,13 +17,4 @@ class HomePage extends Page{
 		logo(wait:true){$("#hplogo")}
 	}
 	
-	def "enter search key"(searchString){
-		searchField.value(searchString)
-		assert searchField.value() == searchString
-		
-	}
-	def "click search"(){
-		logo.click()
-		searchButton.click()
-	}
 }
